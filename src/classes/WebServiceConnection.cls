@@ -13,7 +13,7 @@ public class WebServiceConnection {
             request.setBody(json);            
             HttpResponse response = new Http().send(request);                            
         } catch (Exception e) {
-            System.debug(e.getMessage());
+            //LogObject <-- e.getMessage();
         }
     }    
     

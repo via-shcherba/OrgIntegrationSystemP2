@@ -1,8 +1,8 @@
 @RestResource(urlMapping='/IntegrationWebService/*')
 global class IntegrationWebService {
 	@HttpPost
-    global static void readExternalCommands() {
-        try {
+    global static void getExternalData() {
+
             RestRequest request = RestContext.request;
             Blob body = request.requestBody;        
             Map<String, List<Product2>> newRecords = 
@@ -117,10 +117,6 @@ global class IntegrationWebService {
                     }
                 }               
             }
-                       
-        } catch (Exception e) {
-            System.debug(e.getMessage());
-        }
     }
     
 }

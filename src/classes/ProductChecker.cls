@@ -4,7 +4,6 @@ global class ProductChecker implements Database.Batchable<sObject>, Database.Sta
             
     global Database.QueryLocator start(Database.BatchableContext BC) {         
         String dateSearch = (Test.isRunningTest()) ? 'TODAY' : 'YESTERDAY';
-        System.debug(dateSearch);
         return Database.getQueryLocator(
             ' SELECT Id, Name, Description, ExtId__c, Family, ProductCode, ' + 
             ' StockKeepingUnit, isDeleted, LastModifiedDate, CreatedDate, DisplayUrl FROM Product2 ' +
